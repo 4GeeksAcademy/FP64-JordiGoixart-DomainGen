@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hello Rigo with Vanilla.js</title>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+      integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+      crossorigin="anonymous"
+    />
+    <link rel="shortcut icon" href="./4geeks.ico" />
+  </head>
+  <body>
+    <div class="container-fluid text-center">
+      <h1 class="mt-5">Lista de combinaciones posibles</h1>
+      <p id="combinations"></p>
+      </div>
+    </div>
+    <script>
+
+window.onload = function() {
+  const genAllCombinations = () => {
+    const starters = ["Ensalada César", "Patatas Bravas", "Alitas picantes"];
+    const mainCourses = [
+      "Spaghetti Bolognesa",
+      "Boss Burger",
+      "Burrito Mexicano"
+    ];
+    const desserts = ["Brownie", "Crepe", "Helado"];
+    const drinks = ["Coca-Cola", "Sprite", "Agua"];
+
+    const getCombination = [];
+
+    starters.forEach(starter => {
+      mainCourses.forEach(mainCourse => {
+        desserts.forEach(dessert => {
+          drinks.forEach(drink => {
+            getCombination.push({
+              starter,
+              mainCourse,
+              dessert,
+              drink
+            });
+          });
+        });
+      });
+    });
+    return getCombination;
+  };
+
+  function main() {
+    const combinations = genAllCombinations();
+    const getCombinated = document.getElementById("combinations");
+
+    combinations.forEach(combination => {
+      const combinationZone = document.createElement("p");
+      combinationZone.textContent = `${combination.starter}, ${combination.mainCourse}, ${combination.dessert}, ${combination.drink}`;
+      getCombinated.appendChild(combinationZone);
+    });
+  }
+  main();
+};
+
+
+
+    </script>
+  </body>
+</html>

@@ -1,29 +1,220 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hello Rigo with Vanilla.js</title>
     <link
       rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
-      integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
       crossorigin="anonymous"
     />
-    <link rel="shortcut icon" href="./4geeks.ico" />
+    <link rel="stylesheet" href="src/style.css" />
+    <title>Document</title>
   </head>
+
   <body>
-    <div class="container-fluid text-center">
-      <h1 class="mt-5">Hello Rigo!</h1>
-      <img src="./rigo-baby.jpg" />
-      <p class="alert alert-warning mt-4">
-        If this text is <b>not</b> centered and <b>yellow</b>, you probably have
-        an error
-      </p>
-      <div class="fixed-bottom p-4">
-        Made with ❤️ by
-        <a href="https://www.4geeksacademy.com">4Geeks Academy</a>
+    <div class="min-vw-100 min-vh-100 container">
+      <div class="left_container">
+        <div class="order_container">
+          <div class="order_title h1">Tu pedido.</div>
+          <div class="food_title">Entrante</div>
+          <div class="selection">
+            <div id="starter_img" class="food_img"></div>
+            <div id="starter_info" class="food_info font-weight-bold"></div>
+          </div>
+          <div class="food_title">Plato principal</div>
+          <div class="selection">
+            <div id="main_img" class="food_img"></div>
+            <div id="main_info" class="food_info font-weight-bold"></div>
+          </div>
+          <div class="food_title">Bebida</div>
+          <div class="selection">
+            <div id="drink_img" class="food_img"></div>
+            <div id="drink_info" class="food_info font-weight-bold"></div>
+          </div>
+          <div class="food_title">Postre</div>
+          <div class="selection">
+            <div id="dessert_img" class="food_img"></div>
+            <div id="dessert_info" class="food_info font-weight-bold"></div>
+          </div>
+          <div class="button_space d-grid gap-2">
+            <button id="boton" class="col-6 btn btn-warning" type="button">
+              Enviar Pedido
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="right_container">
+        <div class="menu_container">
+          <div id="entrante_form" class="form">
+            <h1>Selecciona tu entrante:</h1>
+            <div id="entrante_options" class="options">
+              <div class="option">
+                <img src="src/img/Cesar.png" alt="Entrante 1" />
+                <div class="description">
+                  <p>
+                    <b>Ensalada César.</b> <br />Con el mejor Pollo Rebozado,
+                    Mezclum, Cherrys y nuestra Salsa César Especial.
+                  </p>
+                </div>
+                <button class="btn btn-success" onclick="selectEntrante(1)">
+                  <b>¡Lo<br />quiero!</b>
+                </button>
+              </div>
+              <div class="option">
+                <img src="src/img/Bravas.png" alt="Entrante 2" />
+                <div class="description">
+                  <p>
+                    <b>Patatas bravas.</b> <br />Recién cortadas, con Mayonesa y
+                    junto a la indiscutible Salsa Brava de la Casa.
+                  </p>
+                </div>
+                <button class="btn btn-success" onclick="selectEntrante(2)">
+                  <b>¡Lo<br />quiero!</b>
+                </button>
+              </div>
+              <div class="option">
+                <img src="src/img/Alitas.png" alt="Entrante 3" />
+                <div class="description">
+                  <p>
+                    <b>Alitas picantes.</b> <br />100% de corral, con la salsa
+                    picante heredada de nuestra fundadora Mexicana.
+                  </p>
+                </div>
+                <button class="btn btn-success" onclick="selectEntrante(3)">
+                  <b>¡Lo<br />quiero!</b>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div id="primeros_form" class="form">
+            <h1>Selecciona tu primero:</h1>
+            <div id="primero_options" class="options">
+              <div class="option">
+                <img src="src/img/Pasta.png" alt="Primero 1" />
+                <div class="description">
+                  <p>
+                    <b>Spaghetti a la Bolognesa.</b><br />Pasta italiana, con
+                    salsa Bolognesa casera Della Mamma y Parmigiano.
+                  </p>
+                </div>
+                <button class="btn btn-success" onclick="selectPrimero(1)">
+                  <b>¡Lo<br />quiero!</b>
+                </button>
+              </div>
+              <div class="option">
+                <img src="src/img/Burger.png" alt="Primero 2" />
+                <div class="description">
+                  <p>
+                    <b>Boss Burger con Patatas.</b><br />Pura receta New York,
+                    con Lechuga, Tomate, Cebolla, Queso y Pepinillo.
+                  </p>
+                </div>
+                <button class="btn btn-success" onclick="selectPrimero(2)">
+                  <b>¡Lo<br />quiero!</b>
+                </button>
+              </div>
+              <div class="option">
+                <img src="src/img/Burrito.png" alt="Primero 3" />
+                <div class="description">
+                  <p>
+                    <b>Burrito Mexicano.</b><br />Desde lo mas profundo del
+                    Yucatán, con Pimiento, Cebolla, Salsa de Queso y Chile
+                    Habanero.
+                  </p>
+                </div>
+                <button class="btn btn-success" onclick="selectPrimero(3)">
+                  <b>¡Lo<br />quiero!</b>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div id="bebidas_form" class="form">
+            <h1>Selecciona tu bebida:</h1>
+            <div id="bebida_options" class="options">
+              <div class="option">
+                <img src="src/img/Coke.png" alt="Bebida 1" />
+                <div class="description"><b>Coca-Cola Original.</b></div>
+                <button class="btn btn-success" onclick="selectBebida(1)">
+                  <b>¡Lo<br />quiero!</b>
+                </button>
+              </div>
+              <div class="option">
+                <img src="src/img/Sprite.png" alt="Bebida 2" />
+                <div class="description"><b>Sprite.</b></div>
+                <button class="btn btn-success" onclick="selectBebida(2)">
+                  <b>¡Lo<br />quiero!</b>
+                </button>
+              </div>
+              <div class="option">
+                <img src="src/img/Agua.png" alt="Bebida 3" />
+                <div class="description"><b>Agua Cabreiroá.</b></div>
+                <button class="btn btn-success" onclick="selectBebida(3)">
+                  <b>¡Lo<br />quiero!</b>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div id="postres_form" class="form">
+            <h1>Selecciona tu postre:</h1>
+            <div id="postre_options" class="options">
+              <div class="option">
+                <img src="src/img/Brownie.png" alt="Postre 1" />
+                <div id="postre1" class="description">
+                  <p>
+                    <b>Brownie de Chocolate con Nata y Topping.</b><br />Nuestro
+                    mejor chute de Energía.
+                  </p>
+                </div>
+                <button class="btn btn-success" onclick="selectPostre(1)">
+                  <b>¡Lo<br />quiero!</b>
+                </button>
+              </div>
+              <div class="option">
+                <img src="src/img/Crepe.png" alt="Postre 2" />
+                <div id="postre2" class="description">
+                  <p>
+                    <b>Crepe de Chocolate con Frutos Rojos.</b><br />El
+                    equilibrado pero Delicioso.
+                  </p>
+                </div>
+                <button class="btn btn-success" onclick="selectPostre(2)">
+                  <b>¡Lo<br />quiero!</b>
+                </button>
+              </div>
+              <div class="option">
+                <img src="src/img/Helado.png" alt="Postre 3" />
+                <div id="postre3" class="description">
+                  <p>
+                    <b>Helado de Vainilla con Galleta y Brownie.</b><br />Sube
+                    la temperatura... No Problem!
+                  </p>
+                </div>
+                <button class="btn btn-success" onclick="selectPostre(3)">
+                  <b>¡Lo<br />quiero!</b>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div id="post_menu" class="post_menu">
+            <h1 class="mb-3 text-center">¡ Buen Provecho !</h1>
+            <button
+              id="boton"
+              class="col-12 btn btn-warning mb-3"
+              type="button"
+            >
+              Enviar Pedido
+            </button>
+            <a href="src/list.html">
+              <button class="col-12 btn btn-success mb-3">
+                Lista de Combinaciones
+              </button></a
+            >
+          </div>
+        </div>
       </div>
     </div>
+    <script src="src/app.js"></script>
   </body>
 </html>

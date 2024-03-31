@@ -1,1 +1,131 @@
-@import "~bootstrap/dist/css/bootstrap.min.css";
+.container {
+  padding: 0;
+
+  display: flex;
+  justify-content: center;
+}
+
+.left_container {
+  min-width: 45%;
+  max-width: 45%;
+  min-height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.right_container {
+  min-width: 45%;
+  max-width: 45%;
+  min-height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu_container {
+  border: 5px solid grey;
+  width: 98%;
+  height: 98%;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.order_container {
+  border: 5px solid grey;
+  width: 98%;
+  height: 98%;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.order_title {
+  display: flex;
+  justify-content: center;
+}
+
+.food_title {
+  width: 90%;
+  border-bottom: 2px solid grey;
+}
+.selection {
+  display: flex;
+
+  align-items: center;
+  width: 90%;
+  height: 16%;
+  display: flex;
+}
+.food_img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 20%;
+  height: 100%;
+}
+.food_info {
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding-left: 5%;
+}
+.button_space {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+}
+
+.option img {
+  max-width: 30%;
+  height: 25%;
+  border: 10px solid orange;
+  border-radius: 15px;
+}
+.option {
+  display: flex;
+  padding-bottom: 2%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 4%;
+}
+
+.form h1 {
+  display: flex;
+  justify-content: center;
+  margin-top: -5%;
+  width: 96%;
+  margin-bottom: 5%;
+  padding-top: 5%;
+}
+.options {
+  width: 96%;
+}
+
+.description {
+  min-height: 100%;
+  width: 90%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding-left: 3%;
+  padding-right: 3%;
+}
+.option button {
+  height: 80px;
+}
